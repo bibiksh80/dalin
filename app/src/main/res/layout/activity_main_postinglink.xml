@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.photatos.dalin.mlkit.md.java.PostingLinkActivity">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      android:background="@color/black">
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_horizontal"
+      android:paddingTop="1dp">
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="@string/title_posting"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+  </LinearLayout>
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_horizontal"
+      android:paddingTop="1dp">
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/title_posting"
+        tools:srcCompat="@drawable/mypoint_x" />
+  </LinearLayout>
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_horizontal"
+      android:paddingTop="1dp">
+    <TextView
+        android:id="@+id/title_postingdetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/home_page_title_padding_top"
+        android:paddingBottom="@dimen/home_page_title_padding_bottom"
+        android:fontFamily="google-sans"
+        android:gravity="center_horizontal"
+        android:text="@string/title_postingdetail"
+        android:textColor="@color/white"
+        android:textSize="@dimen/post_title_body_size"/>
+  </LinearLayout>
+  </LinearLayout>
+
+  <com.google.android.material.bottomnavigation.BottomNavigationView
+      android:id="@+id/nav_view"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="0dp"
+      android:layout_marginEnd="0dp"
+      android:background="?android:attr/windowBackground"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:menu="@menu/bottom_nav_menu" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

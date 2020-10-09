@@ -1,0 +1,286 @@
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+        //sean maven { url 'https://maven.fabric.io/public' }
+        //google()
+
+    }
+    dependencies {
+        classpath 'io.realm:realm-gradle-plugin:2.3.1'
+        //sean classpath 'io.fabric.tools:gradle:1.+'
+        //classpath 'com.google.firebase:firebase-crashlytics-gradle:2.2.0'
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'realm-android'
+//sean apply plugin: 'io.fabric'
+//apply plugin: 'com.google.firebase.crashlytics'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.photatos.dalin.mlkit"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 7
+        versionName "7.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+        aaptOptions {
+            noCompress "tflite"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    //ghost
+    sourceSets {
+        // add shared test code to both unit and instrumentation tests
+        String sharedTestDir = 'src/sharedTest/java'
+        test {
+            java.srcDir sharedTestDir
+        }
+        androidTest {
+            java.srcDir sharedTestDir
+        }
+    }
+
+    lintOptions {
+        // check for lint errors but don't abort builds
+        // I had to disable it because we don't get translations for new strings immediately
+        abortOnError false
+    }
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+}
+//ghost
+// don't lint for every build (run it manually when you want it to run)
+tasks.whenTaskAdded { task ->
+    if (task.name == 'lint') {
+        task.enabled = false
+    }
+}
+
+// Fabric / Crashlytics keys are mandatory for release builds
+task checkFabricPropertiesExists {
+    doLast {
+        if (!file('fabric.properties').exists()) {
+            throw new FileNotFoundException('Missing fabric.properties file for Fabric / Crashlytics!')
+        }
+    }
+}
+
+tasks.whenTaskAdded { task ->
+    if (task.name == 'assembleRelease') {
+        task.dependsOn checkFabricPropertiesExists
+    }
+}
+
+androidExtensions {
+    experimental = true
+}
+//ghost
+repositories {
+    mavenCentral()
+    google()
+    maven { url 'https://maven.fabric.io/public' }
+    maven { url 'https://github.com/uPhyca/stetho-realm/raw/master/maven-repo' }
+    maven { url 'https://jitpack.io' }
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    /*
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:exifinterface:28.0.0'
+    implementation 'com.android.support:support-media-compat:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    */
+
+    // MLkit
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.exifinterface:exifinterface:1.0.0'
+    implementation 'androidx.media:media:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    //implementation 'com.google.android.material:material:1.0.0-rc01'
+    // com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton eror
+    implementation 'com.google.android.material:material:1.1.0-alpha06'
+//    implmentation  'com.android.support:design-chip:28.0.0-alpha1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
+
+
+    //new
+    // ML Kit dependencies
+    implementation 'com.google.firebase:firebase-ml-vision:20.0.0'
+    //implementation "com.google.firebase:firebase-ml-vision:19.0.3"
+    // Image Labeling model.
+    implementation 'com.google.firebase:firebase-ml-vision-image-label-model:17.0.2'
+    // Face model
+    implementation 'com.google.firebase:firebase-ml-vision-face-model:17.0.2'
+    // Object model
+    implementation 'com.google.firebase:firebase-ml-vision-object-detection-model:16.0.0'
+    // Custom model
+    implementation "com.google.firebase:firebase-ml-model-interpreter:19.0.0"
+     // AutoML model
+    implementation 'com.google.firebase:firebase-ml-vision-automl:16.0.0'
+
+
+    implementation 'com.google.firebase:firebase-core:16.0.9'
+    implementation 'com.google.firebase:firebase-crash:16.2.1'
+
+    // Real Database
+    implementation 'com.google.firebase:firebase-database:18.0.0'
+    implementation 'com.firebaseui:firebase-ui-database:5.0.0'
+    implementation "com.google.firebase:firebase-auth:19.0.0"
+
+    //for tab sdk 19
+    implementation 'androidx.multidex:multidex:2.0.0'
+
+
+
+
+    //org old  https://github.com/the-dagger/MLKitAndroid
+     /*
+    implementation 'com.google.firebase:firebase-ml-vision-image-label-model:15.0.0'
+    implementation "com.google.firebase:firebase-ml-model-interpreter:16.2.0"
+    implementation "com.google.firebase:firebase-ml-vision:17.0.0"
+    implementation 'com.google.firebase:firebase-core:16.0.3'
+    implementation 'com.google.firebase:firebase-crash:16.2.0'
+     */
+
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.wonderkiln:camerakit:0.13.1'
+    implementation 'com.github.jorgecastilloprz:fabprogresscircle:1.01@aar'
+    implementation 'com.github.jkwiecien:EasyImage:1.3.1'
+    // google add
+
+    implementation 'androidx.preference:preference:1.0.0'
+    implementation 'com.android.volley:volley:1.1.1'
+    //implementation 'com.google.android.material:material:1.1.0-alpha06'
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    implementation "androidx.annotation:annotation:1.0.2"
+    implementation "androidx.core:core-ktx:1.0.2"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0"
+    implementation "androidx.recyclerview:recyclerview:1.0.0"
+    //impementation  "androidx.cardview.widget.CardView"
+    //implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.31"
+    api 'com.google.guava:guava:27.1-jre'
+
+    //ghost =============================
+    // reactive extensions (rx)
+    implementation "io.reactivex.rxjava2:rxjava:2.1.4"
+    implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
+
+    // networking / communication / data storage
+    implementation("com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion") {
+        exclude module: "okhttp"
+    }
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofitVersion"
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttpVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttpVersion"
+    implementation "com.squareup.picasso:picasso:2.5.2"
+    implementation "com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0"
+    implementation "com.squareup:otto:1.3.8"
+
+    // calendar
+    implementation "androidx.constraintlayout:constraintlayout:1.1.3"
+
+    // UI
+    /*
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibVersion"
+    implementation "com.android.support:cardview-v7:$rootProject.ext.supportLibVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.ext.supportLibVersion"
+    implementation "com.android.support:design:$rootProject.ext.supportLibVersion"
+
+    implementation "com.android.support:percent:$rootProject.ext.supportLibVersion"
+    implementation "com.android.support:customtabs:$rootProject.ext.supportLibVersion"
+     */
+     implementation "androidx.cardview:cardview:1.0.0"
+     implementation "androidx.recyclerview:recyclerview:1.0.0"
+     //implementation "com.google.android.material:material:1.0.0-rc01"
+     implementation "androidx.percentlayout:percentlayout:1.0.0"
+     implementation "androidx.browser:browser:1.0.0"
+
+
+    implementation "org.ocpsoft.prettytime:prettytime:4.0.1.Final"
+    // using a fork because https://github.com/tsengvn/typekit/issues/9#issuecomment-324478332
+    implementation "com.github.katoro:typekit:1.0.1"
+
+    // misc
+    //implementation "com.jakewharton:butterknife:9.0.0-rc2"
+    //kapt "com.jakewharton:butterknife-compiler:9.0.0-rc2"
+    implementation 'com.jakewharton:butterknife:10.0.0'
+    kapt 'com.jakewharton:butterknife-compiler:10.0.0'
+/* sean
+    implementation("com.crashlytics.sdk.android:crashlytics:2.6.2@aar") {
+        transitive = true
+    }
+    implementation("com.crashlytics.sdk.android:answers:1.3.7@aar") {
+        transitive = true
+    }
+*/
+//    implementation 'com.google.firebase:firebase-crashlytics:17.2.1'
+//    implementation 'com.google.firebase:firebase-analytics:17.5.0'
+
+
+    implementation "com.github.hotchemi:permissionsdispatcher:$rootProject.ext.permissionsDispatcherVersion"
+    kapt "com.github.hotchemi:permissionsdispatcher-processor:$rootProject.ext.permissionsDispatcherVersion"
+    implementation "com.github.slugify:slugify:2.1.9"
+
+    // debug
+    debugImplementation "nl.littlerobots.rxlint:rxlint:+"
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:1.5.4"
+    debugImplementation "com.jakewharton.scalpel:scalpel:1.1.2"
+    debugImplementation "io.palaima.debugdrawer:debugdrawer:0.7.0"
+    debugImplementation "io.palaima.debugdrawer:debugdrawer-commons:$rootProject.ext.debugdrawerVersion"
+    debugImplementation "io.palaima.debugdrawer:debugdrawer-okhttp3:$rootProject.ext.debugdrawerVersion"
+    debugImplementation "io.palaima.debugdrawer:debugdrawer-picasso:$rootProject.ext.debugdrawerVersion"
+    debugImplementation "io.palaima.debugdrawer:debugdrawer-scalpel:$rootProject.ext.debugdrawerVersion"
+    debugImplementation "com.facebook.stetho:stetho:$rootProject.ext.stethoVersion"
+    debugImplementation "com.facebook.stetho:stetho-okhttp3:$rootProject.ext.stethoVersion"
+    debugImplementation "com.uphyca:stetho_realm:2.0.0"
+
+    // test
+    testImplementation "junit:junit:4.12"
+    testImplementation "org.hamcrest:hamcrest-library:1.3"
+    testImplementation "uk.co.datumedge:hamcrest-json:0.2"
+    testImplementation "org.mockito:mockito-core:2.10.+"
+    testImplementation "com.squareup.retrofit2:retrofit-mock:$rootProject.ext.retrofitVersion"
+    testImplementation "org.json:json:20170516"    // don't depend on Android's JSONObject: http://stackoverflow.com/a/30759769/504611
+    testImplementation "com.squareup.okhttp3:mockwebserver:$rootProject.ext.okhttpVersion"
+
+    androidTestImplementation "com.android.support.test:runner:$rootProject.ext.androidJunitRunnerVersion"
+    androidTestImplementation "com.android.support.test:rules:$rootProject.ext.androidJunitRunnerVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.ext.espressoVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-intents:$rootProject.ext.espressoVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-contrib:$rootProject.ext.espressoVersion"
+
+    //ghost =============================
+}
+
+apply plugin: 'com.google.gms.google-services'
+

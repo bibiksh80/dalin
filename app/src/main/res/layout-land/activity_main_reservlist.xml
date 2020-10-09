@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    >
+  <TextView
+      android:id="@+id/title1"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="@dimen/home_page_title_padding_top_10"
+      android:paddingBottom="@dimen/home_page_title_padding_bottom_10"
+      android:fontFamily="google-sans"
+      android:gravity="center_horizontal"
+      android:text="@string/reservmaintitle"
+      android:textColor="@color/white"
+      android:textSize="@dimen/home_page_title_size"/>
+  <ImageView
+      android:id="@+id/imageView1"
+      android:layout_width="match_parent"
+      android:layout_height="100dp"
+      android:gravity="center_horizontal"
+      android:src="@drawable/check" />
+  <!--
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/messageRecyclerView"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_above="@+id/linearLayout"
+      tools:listitem="@layout/item_message"/>
+   -->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+      <ListView android:id="@+id/listview"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textColor="@color/white"
+          />
+      <!--
+      <TextView
+          android:id="@+id/reservationid"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingTop="@dimen/home_page_title_padding_top_0"
+          android:paddingBottom="@dimen/home_page_title_padding_bottom_0"
+          android:fontFamily="google-sans"
+          android:gravity="center_horizontal"
+          android:text="@string/title_pointcount"
+          android:textColor="@color/white"
+          android:textSize="@dimen/home_page_title_padding_top"/>
+      -->
+    </LinearLayout>
+
+
+</LinearLayout>

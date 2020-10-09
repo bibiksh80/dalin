@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/MyCardView"
+    tools:ignore="MissingDefaultResource"
+    >
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--suppress AndroidDomInspection -->
+        <ImageView
+            android:id="@+id/post_image"
+            app:layout_widthPercent="100%"
+            app:layout_aspectRatio="178%"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/cdesc_post_image"
+            tools:src="@drawable/ic_launcher"
+            />
+
+        <TextView
+            android:id="@+id/post_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/post_image"
+            android:paddingBottom="@dimen/padding_inline"
+            android:paddingEnd="@dimen/padding_large"
+            android:paddingLeft="@dimen/padding_large"
+            android:paddingRight="@dimen/padding_large"
+            android:paddingStart="@dimen/padding_large"
+            android:paddingTop="@dimen/padding_large"
+            android:textAppearance="@style/TextAppearance.Light"
+            tools:text="This is a very, very, very, very loooooong post title"
+            />
+
+        <ImageView
+            android:id="@+id/post_status_icon"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_below="@id/post_title"
+            android:layout_alignLeft="@id/post_title"
+            android:layout_alignStart="@id/post_title"
+            android:layout_marginLeft="@dimen/padding_large"
+            android:layout_marginStart="@dimen/padding_large"
+            android:layout_marginTop="3dp"
+            android:scaleType="fitStart"
+            tools:src="@drawable/status_draft"
+            tools:ignore="ContentDescription"
+            />
+
+        <TextView
+            android:id="@+id/post_status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/post_title"
+            android:layout_toRightOf="@id/post_status_icon"
+            android:layout_toEndOf="@id/post_status_icon"
+            android:layout_toLeftOf="@+id/post_tags"
+            android:layout_toStartOf="@+id/post_tags"
+            android:paddingBottom="@dimen/padding_large"
+            android:paddingEnd="@dimen/padding_large"
+            android:paddingLeft="@dimen/padding_inline"
+            android:paddingRight="@dimen/padding_large"
+            android:paddingStart="@dimen/padding_inline"
+            android:gravity="start"
+            android:maxLines="2"
+            android:textAppearance="@style/TextAppearance.Small.Dim"
+            android:textColor="@color/status_published"
+            app:fontName="narrow-bold"
+            tools:text="Published 5 days ago"
+            />
+
+        <TextView
+            android:id="@+id/post_tags"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/post_title"
+            android:layout_alignRight="@id/post_title"
+            android:layout_alignEnd="@id/post_title"
+            android:paddingBottom="@dimen/padding_large"
+            android:paddingEnd="@dimen/padding_large"
+            android:paddingRight="@dimen/padding_large"
+            android:maxLines="1"
+            android:ellipsize="none"
+            android:textAppearance="@style/TextAppearance.Small.Dim"
+            android:textColor="@color/text_tertiary"
+            app:fontName="narrow-bold"
+            tools:text="#android +2"
+            tools:ignore="RtlSymmetry"
+            />
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+</androidx.cardview.widget.CardView>

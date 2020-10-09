@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="file:///android_asset/css/main.css" />
+    <link rel="stylesheet" href="file:///android_asset/css/defer.css" />
+
+    <script type="text/javascript" src="file:///android_asset/markdown-converter.js"></script>
+    <script type="text/javascript" src="file:///android_asset/js/prism.min.js"></script>
+    <script type="text/javascript">
+        var content = undefined, title = undefined;
+        window.addEventListener('load', function () {
+            content = document.getElementsByClassName('post-content')[0];
+            title = document.getElementsByClassName('post-title')[0];
+        });
+
+        function updateTitle() {
+            if (! title) {
+                return;         // DOM not ready yet
+            }
+            title.innerHTML = POST.getTitle();
+        }
+
+        function preview() {
+            if (! content) {
+                return;         // DOM not ready yet
+            }
+            markdown = POST.getMarkdown();
+
+            var html = MarkdownConverter.render(markdown),
+                blogUrl = POST.getBlogUrl();
+
+            html = html
+                // replace all relative URLs in links so they don't start with file:///
+                // add http: to protocol-relatie URLs
+                .replace(/(<a[^>]*href=["'])(\/[^/>].*>)/gi, "$1" + blogUrl + "$2")
+                .replace(/(<a[^>]*href=["'])(\/\/[^/])/gi, "$1http:$2")
+                // replace all relative URLs in images and resolve protocol-relatie URLs
+                .replace(/(<img[^>]*src=["'])(\/[^/>].*>)/gi, "$1" + blogUrl + "$2")
+                .replace(/(<img[^>]*src=["'])(\/\/[^/])/gi, "$1http:$2")
+                // replace all relative URLs in videos and resolve protocol-relatie URLs
+                .replace(/(<source[^>]*src=["'])(\/[^/>].*>)/gi, "$1" + blogUrl + "$2")
+                .replace(/(<source[^>]*src=["'])(\/\/[^/])/gi, "$1http:$2")
+
+            content.innerHTML = html;
+            Prism.highlightAll();
+        }
+    </script>
+</head>
+
+<body>
+    <main class="content" style="overflow-x: hidden;">
+        <article class="post">
+
+            <header>
+                <h1 class="post-title">
+                    <!-- post title goes here -->
+                </h1>
+            </header>
+
+            <section class="post-content">
+                <!-- post preview content goes here -->
+            </section>
+
+        </article>
+    </main>
+</body>
+</html>

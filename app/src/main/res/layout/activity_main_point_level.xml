@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    >
+
+  <TextView
+      android:id="@+id/title1"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="@dimen/home_page_title_padding_top_10"
+      android:paddingBottom="@dimen/home_page_title_padding_bottom_10"
+      android:fontFamily="google-sans"
+      android:gravity="center_horizontal"
+      android:text="@string/title_point"
+      android:textColor="@color/white"
+      android:textSize="@dimen/home_page_title_size"/>
+  <ImageView
+      android:id="@+id/imageView1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/mypoint" />
+  <TextView
+      android:id="@+id/point"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="@dimen/home_page_title_padding_top_10"
+      android:paddingBottom="@dimen/home_page_title_padding_bottom_10"
+      android:fontFamily="google-sans"
+      android:gravity="center_horizontal"
+      android:text="@string/title_pointcount"
+      android:textColor="@color/white"
+      android:textSize="@dimen/home_page_title_padding_top"/>
+  <!--
+  <ImageButton
+      android:id="@+id/btnPointplus"
+      android:layout_width="50dp"
+      android:layout_height="50dp"
+      android:layout_gravity="center"
+      android:background="@null"
+      android:scaleType="centerCrop"
+      android:src="@drawable/plus" />
+
+  <TextView
+      android:id="@+id/pointplus"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="@dimen/home_page_title_padding_top"
+      android:paddingBottom="@dimen/home_page_title_padding_top"
+      android:fontFamily="google-sans"
+      android:gravity="center_horizontal"
+      android:text="@string/title_pointplus"
+      android:textColor="@color/white"
+      android:textSize="@dimen/home_page_point_size"/>
+  -->
+
+  <ImageButton
+      android:id="@+id/btnPostit"
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:layout_gravity="center"
+      android:background="@null"
+      android:scaleType="centerCrop"
+      android:src="@drawable/postit" />
+  <TextView
+      android:id="@+id/posttitle"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="@dimen/home_page_title_padding_top_10"
+      android:paddingBottom="@dimen/home_page_title_padding_bottom_10"
+      android:fontFamily="google-sans"
+      android:gravity="center_horizontal"
+      android:text="@string/title_posttitle"
+      android:textColor="@color/white"
+      android:textSize="@dimen/home_page_title_size"/>
+  <TextView
+      android:id="@+id/postcount"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="@dimen/home_page_title_padding_top_10"
+      android:paddingBottom="@dimen/home_page_title_padding_bottom_10"
+      android:fontFamily="google-sans"
+      android:gravity="center_horizontal"
+      android:text="@string/title_pointminus"
+      android:textColor="@color/white"
+      android:textSize="@dimen/home_page_title_size"/>
+  <TextView
+      android:id="@+id/pointlevelcount"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="@dimen/home_page_title_padding_top_10"
+      android:paddingBottom="@dimen/home_page_title_padding_bottom_10"
+      android:fontFamily="google-sans"
+      android:gravity="center_horizontal"
+      android:text="@string/title_pointminus"
+      android:textColor="@color/white"
+      android:textSize="@dimen/home_page_title_size"/>
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_horizontal"
+      android:paddingTop="1dp">
+    <ImageButton
+        android:id="@+id/btnPointlevelplus"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/plus" />
+    <View
+        android:layout_width="10dp"
+        android:layout_height="0dp"/>
+    <ImageButton
+        android:id="@+id/btnPointlevelminus"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/postcount"
+        android:background="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/minus" />
+  </LinearLayout>
+
+  <!--
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/mode_recycler_view"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:scrollbars="vertical"/>
+    -->
+
+</LinearLayout>

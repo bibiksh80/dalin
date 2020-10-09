@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="UseCompoundDrawables,ContentDescription">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="@dimen/toolbar_elevation"
+        app:cardUseCompatPadding="false">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+            style="@style/MyToolbar">
+
+            <TextView
+                style="@style/TextAppearance.Medium.Light.Inverse"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/padding_default"
+                android:paddingRight="@dimen/padding_default"
+                android:text="@string/about"
+                />
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/padding_default"
+            android:paddingStart="@dimen/padding_default"
+            android:paddingRight="@dimen/padding_default"
+            android:paddingEnd="@dimen/padding_default"
+            android:paddingBottom="@dimen/padding_default">
+
+            <!-- general -->
+            <androidx.cardview.widget.CardView style="@style/AboutCardStyle">
+
+                <LinearLayout style="@style/AboutLayoutStyle">
+
+                    <!-- app name -->
+                    <LinearLayout
+                        style="@style/AboutItemStyle">
+                        <ImageView
+                            style="@style/AboutIconStyle"
+                            android:src="@mipmap/ic_launcher"
+                            android:tint="@android:color/transparent"
+                            />
+                        <TextView
+                            style="@style/AboutTextStyle"
+                            android:text="@string/app_name"
+                            android:textAppearance="@style/TextAppearance.Medium"
+                            />
+                    </LinearLayout>
+
+                    <!-- version -->
+                    <LinearLayout style="@style/AboutItemStyle">
+                        <ImageView
+                            style="@style/AboutIconStyle"
+                            app:srcCompat="@drawable/about_version"
+                            />
+                        <LinearLayout style="@style/AboutSubItemStyle">
+                            <TextView
+                                style="@style/AboutTitleStyle"
+                                android:text="@string/version"
+                                />
+                            <TextView
+                                android:id="@+id/about_version"
+                                style="@style/AboutSubtitleStyle"
+                                android:text="@string/version_unknown"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- help -->
+                    <LinearLayout
+                        android:id="@+id/about_help"
+                        style="@style/AboutItemStyle">
+                        <ImageView
+                            style="@style/AboutIconStyle"
+                            app:srcCompat="@drawable/about_community"
+                            />
+                        <LinearLayout style="@style/AboutSubItemStyle">
+                            <TextView
+                                style="@style/AboutTitleStyle"
+                                android:text="@string/help_title"
+                                />
+                            <TextView
+                                style="@style/AboutSubtitleStyle"
+                                android:text="@string/help_subtitle"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- open-source libraries -->
+                    <LinearLayout
+                        android:id="@+id/about_open_source_libs"
+                        style="@style/AboutItemStyle">
+                        <ImageView
+                            style="@style/AboutIconStyle"
+                            app:srcCompat="@drawable/about_open_source_libs"
+                            />
+                        <TextView
+                            style="@style/AboutTextStyle"
+                            android:text="@string/open_source_libs"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- support development -->
+            <androidx.cardview.widget.CardView style="@style/AboutCardStyle">
+
+                <LinearLayout style="@style/AboutLayoutStyle">
+
+                    <TextView
+                        style="@style/AboutCategoryHeadingStyle"
+                        android:text="@string/category_support_development"
+                        />
+
+                    <!-- report bugs -->
+                    <LinearLayout
+                        android:id="@+id/about_report_bugs"
+                        style="@style/AboutItemStyle">
+                        <ImageView
+                            style="@style/AboutIconStyle"
+                            app:srcCompat="@drawable/about_report_bug"
+                            />
+                        <LinearLayout style="@style/AboutSubItemStyle">
+                            <TextView
+                                style="@style/AboutTitleStyle"
+                                android:text="@string/report_bugs"
+                                />
+                            <TextView
+                                style="@style/AboutSubtitleStyle"
+                                android:text="@string/report_bugs_subtitle"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- translate -->
+                    <LinearLayout
+                        android:id="@+id/about_translate"
+                        style="@style/AboutItemStyle">
+                        <ImageView
+                            style="@style/AboutIconStyle"
+                            app:srcCompat="@drawable/about_translate"
+                            />
+                        <LinearLayout style="@style/AboutSubItemStyle">
+                            <TextView
+                                style="@style/AboutTitleStyle"
+                                android:text="@string/translate"
+                                />
+                            <TextView
+                                style="@style/AboutSubtitleStyle"
+                                android:text="@string/translate_subtitle"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- rate on play store -->
+                    <LinearLayout
+                        android:id="@+id/about_play_store"
+                        style="@style/AboutItemStyle">
+                        <ImageView
+                            style="@style/AboutIconStyle"
+                            app:srcCompat="@drawable/about_rate"
+                            />
+                        <LinearLayout style="@style/AboutSubItemStyle">
+                            <TextView
+                                style="@style/AboutTitleStyle"
+                                android:text="@string/play_store"
+                                />
+                            <TextView
+                                style="@style/AboutSubtitleStyle"
+                                android:text="@string/play_store_subtitle"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

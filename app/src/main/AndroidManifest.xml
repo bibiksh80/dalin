@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.photatos.dalin.mlkit">
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <application
+        android:name=".ghost.SpectreApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        android:configChanges="orientation|keyboardHidden|screenSize"
+        tools:ignore="GoogleAppIndexingWarning">
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <!-- main view -->
+
+        <activity
+        android:name=".md.java.MainActivity"
+        android:exported="true"
+        android:screenOrientation="portrait">
+        <!--
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        -->
+
+    </activity>
+        <!-- android:screenOrientation="portrait"  -->
+    <activity
+        android:name=".md.java.Main2Activity"
+        android:exported="true"
+        android:configChanges="orientation|keyboardHidden"
+        >
+
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+
+    </activity>
+        <!-- QR/Barcode choice -->
+        <activity
+            android:name=".md.java.QRActivity"
+            android:exported="false"
+            android:configChanges="orientation|keyboardHidden"
+            >
+        </activity>
+
+        <!-- google mlkit -->
+
+        <!-- barcode scanner -->
+        <activity
+            android:name=".md.java.LiveBarcodeScanningActivity"
+            android:exported="false"
+            android:configChanges="orientation|keyboardHidden"
+            >
+            <meta-data
+                android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+                android:value="barcode" />
+        </activity>
+        <!-- google firebase mlkit image to text -->
+        <!--
+        <activity
+            android:name=".md.java.LiveObjectDetectionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+                android:value="label" />
+        </activity>
+        -->
+        <!-- google firebase mlkit image to text -->
+        <activity
+            android:name=".md.java.LiveObjectCloudDetectionActivity"
+            android:exported="false"
+            android:configChanges="orientation|keyboardHidden"
+            >
+            <meta-data
+                android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+                android:value="label" />
+        </activity>
+        <!-- google firebase mlkit image to text 2 -->
+        <activity
+            android:name=".md.java.LiveObjectCloudImageDetectionActivity"
+            android:exported="false"
+            android:configChanges="orientation|keyboardHidden"
+            >
+            <meta-data
+                android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+                android:value="label" />
+        </activity>
+        <!-- google firebase mlkit text recognition -->
+        <activity
+            android:name=".md.java.LiveObjectCloudTextDetectionActivity"
+            android:exported="false"
+            android:configChanges="orientation|keyboardHidden"
+            >
+            <meta-data
+                android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+                android:value="label" />
+        </activity>
+        <!-- google firebase mlkit landmark recognition -->
+        <activity
+            android:name=".md.java.LiveObjectCloudLandDetectionActivity"
+            android:exported="false"
+            android:configChanges="orientation|keyboardHidden"
+            >
+            <meta-data
+                android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+                android:value="label" />
+        </activity>
+
+
+        <!-- google firebase mlkit camera capture view -->
+        <activity
+            android:name=".md.java.StaticObjectDetectionActivity"
+            android:exported="false"
+            android:configChanges="orientation|keyboardHidden"
+            >
+        </activity>
+
+        <!-- google firebase mlkit camera setting view -->
+        <activity
+            android:name=".md.java.settings.SettingsActivity"
+            android:exported="false"
+            android:label="@string/settings_title"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/Theme.AppCompat.Light">
+        </activity>
+        <!--
+                <activity
+                    android:name=".md.java.StillImageActivity"
+                    android:exported="false"
+                    android:screenOrientation="portrait">
+                </activity>
+                -->
+
+        <!-- ghost app -->
+        <!-- ghost main login link -->
+        <activity
+            android:name=".md.java.PostingLinkActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:launchMode="singleTop">
+        </activity>
+
+
+        <!-- ghost main login -->
+        <activity
+            android:name=".ghost.view.LoginActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:launchMode="singleTop"
+            android:configChanges="orientation|screenSize|layoutDirection"
+            android:theme="@style/LoginTheme">
+        </activity>
+        <!-- ghost main post list view -->
+        <activity
+            android:name=".ghost.view.PostListActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/CardListActivityTheme">
+        </activity>
+        <!-- ghost main post view -->
+        <activity
+            android:name=".ghost.view.PostViewActivity"
+            android:parentActivityName=".ghost.view.PostListActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/AppTheme4"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ghost.view.PostListActivity"/>
+        </activity>
+        <!-- ghost main post view conflit  -->
+        <activity
+            android:name=".ghost.view.PostConflictResolutionActivity"
+            android:parentActivityName=".ghost.view.PostListActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:launchMode="singleTask"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ghost.view.PostListActivity"/>
+        </activity>
+        <!-- ghost main post view about  -->
+        <activity
+            android:name=".ghost.view.AboutActivity"
+            android:parentActivityName=".ghost.view.PostListActivity"
+            android:theme="@style/AppTheme4"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ghost.view.PostListActivity"/>
+        </activity>
+        <!-- ghost main post view open library  -->
+        <activity
+            android:name=".ghost.view.OpenSourceLibsActivity"
+            android:parentActivityName=".ghost.view.AboutActivity"
+
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ghost.view.AboutActivity"/>
+        </activity>
+
+        <!-- blog home webview -->
+        <activity
+            android:name=".md.java.WebHomeActivity"
+            android:exported="false"
+            android:configChanges="orientation|keyboardHidden"
+            >
+        </activity>
+        <!-- point view with firebase realtime database -->
+        <activity
+            android:name=".md.java.PointActivity"
+            android:exported="false"
+            android:configChanges="orientation|keyboardHidden"
+            >
+        </activity>
+        <!--
+        <activity
+            android:name=".md.java.PointLevelActivity"
+            android:exported="false"
+            android:screenOrientation="portrait">
+        </activity>
+        -->
+
+        <!-- reservation -->
+        <activity
+            android:name=".md.java.ReservationmainActivity"
+            android:exported="false"
+            android:configChanges="orientation|keyboardHidden"
+            >
+        </activity>
+        <activity
+            android:name=".md.java.ReservationListActivity"
+            android:exported="false"
+            android:configChanges="orientation|keyboardHidden"
+            >
+        </activity>
+        <activity
+            android:name=".md.java.ReservationActivity"
+            android:exported="false"
+            android:configChanges="orientation|keyboardHidden"
+            >
+        </activity>
+
+
+    </application>
+</manifest>

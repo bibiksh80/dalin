@@ -1,0 +1,277 @@
+<resources>
+    <string name="app_name">분리수거의 달인</string>
+    <string name="app_web_name">달인웹</string>
+    <string name="detected_items">찾는것</string>
+    <string name="desc_text">간단히 카드 유효기간을 확인해보세요.</string>
+    <string name="desc_face">개인적 머신러닝을 해보세요.</string>
+    <string name="desc_barcode">바코드 또는 QR 코드로 찾아보세요.</string>
+    <string name="desc_labelling">인공지능으로 재활용을 검색해 해보세요.</string>
+    <string name="desc_landmark">유명지 사진이 맞는지 확인해보세요.</string>
+    <string name="title_text">글자 인식하기</string>
+    <string name="title_custom">Custom Model</string>
+    <string name="title_barcode">바코드 찾기</string>
+    <string name="title_labelling">사진 찾기</string>
+    <string name="title_landmark">유명장소 찾기</string>
+    <string name="location">위치</string>
+    <string name="latitude">위도</string>
+    <string name="longitude">경도</string>
+    <string name="accuracy">정확도</string>
+    <string name="title_face">얼굴 인식</string>
+
+    <string name="item1">물품인식</string>
+    <string name="item1_1">QR/바코드 인식</string>
+    <string name="item1_2">사물인식</string>
+    <string name="item2">달인인증</string>
+    <string name="item3">내 포인트</string>
+    <string name="item4">재활용의 모든것</string>
+    <string name="item7">예약 내용</string>
+    <string name="item8">예약 하기</string>
+
+    <!--  google -->
+    <string name="entry_java_title">Java</string>
+    <string name="entry_java_subtitle">Run the MLKit Showcase written in Java.</string>
+    <string name="entry_kotlin_title">Kotlin</string>
+    <string name="entry_kotlin_subtitle">Run the MLKit Showcase written in Kotlin.</string>
+    <string name="mode_odt_live_home_title">재활용의 모든것</string>
+    <string name="mode_odt_live_home_subtitle">자세한 재활용 활용법을 알아보아요.</string>
+    <string name="mode_odt_live_image_label_title">인공지능 재활용 알아보기</string>
+    <string name="mode_odt_live_image_label_subtitle">머신러닝으로 이미지 라벨을 검색을 해보세요.</string>
+    <string name="mode_odt_live_image_title">비슷한 이미지 검색</string>
+    <string name="mode_odt_live_image_subtitle">머신러닝으로 비슷한 사진을 검색을 해보세요.</string>
+    <string name="mode_odt_live_text_title">글자 인식하기</string>
+    <string name="mode_odt_live_text_subtitle">간단히 카드 유효기간을 확인해보세요.</string>
+    <string name="mode_odt_live_barcode_title">바코드 QR 코드로 재활용 알아보기</string>
+    <string name="mode_odt_live_barcode_subtitle">바코드 또는 QR를  찾아보세요.</string>
+    <string name="mode_odt_live_landmark_title">유명장소 찾기</string>
+    <string name="mode_odt_live_landmark_subtitle">유명지 사진이 맞는지 확인해보세요.</string>
+    <string name="mode_odt_live_face_title">얼굴 인식</string>
+    <string name="mode_odt_live_face_subtitle">인공지능 얼굴인식을 해보세요.</string>
+    <string name="mode_odt_live_myimage_title">나의 재활용</string>
+    <string name="mode_odt_live_myimage_subtitle">재활용 뽐내기.</string>
+    <string name="mode_odt_live_mypoint_title">나의 포인트</string>
+    <string name="mode_odt_live_mypoint_subtitle">나의 포인트를 알아보세요.</string>
+    <string name="mode_odt_static_title">Object Detection: Static Image</string>
+    <string name="mode_odt_static_subtitle">One or more objects can be detected from a provided image.</string>
+    <string name="mode_barcode_live_title">Barcode Scanning</string>
+    <string name="mode_barcode_live_subtitle">Read data encoded in most standard barcode formats.</string>
+    <string name="settings_title">MLKit Showcase Settings</string>
+    <string name="cd_settings_button">Settings</string>
+    <string name="cd_close_button">Back</string>
+    <string name="cd_flash_button">Toggle camera flash</string>
+    <string name="cd_photo_library_button">Upload image</string>
+    <string name="prompt_point_at_an_object">Point your camera at an object</string>
+    <string name="prompt_point_at_a_barcode">Point your camera at a barcode</string>
+    <string name="prompt_hold_camera_steady">Keep camera still for a moment</string>
+    <string name="prompt_move_camera_closer">Move closer to search</string>
+    <string name="prompt_searching">Searching&#8230;</string>
+    <string name="product_search_button">사진 검색</string>
+    <plurals name="bottom_sheet_title">
+        <item quantity="one">%d 건 검색됨</item>
+        <item quantity="other">%d 건 검색됨</item>
+    </plurals>
+    <string name="static_image_prompt_detected_no_results">No results found</string>
+    <string name="static_image_prompt_detected_results">Tap on a dot to inspect</string>
+    <string name="static_image_card_no_result_title">No result found</string>
+    <string name="static_image_card_no_result_subtitle">Support text place holder</string>
+    <string name="static_image_preview_card_subtitle">+%d more results</string>
+
+    <!-- Strings for camera settings. -->
+    <string name="pref_category_camera">Camera</string>
+    <string name="pref_key_rear_camera_preview_size" translatable="false">rcpvs</string>
+    <string name="pref_key_rear_camera_picture_size" translatable="false">rcpts</string>
+    <string name="pref_title_rear_camera_preview_size">Rear camera preview size</string>
+
+    <!-- Strings for object detection settings. -->
+    <string name="pref_category_object_detection">Object detection</string>
+    <string name="pref_key_object_detector_enable_multiple_objects" translatable="false">odemo</string>
+    <string name="pref_title_object_detector_enable_multiple_objects">Enable multiple objects</string>
+    <string name="pref_key_object_detector_enable_classification" translatable="false">odec</string>
+    <string name="pref_title_object_detector_enable_classification">Enable classification</string>
+
+    <!-- Strings for product search settings. -->
+    <string name="pref_category_product_search">Product search</string>
+    <string name="pref_key_enable_auto_search" translatable="false">pkeas</string>
+    <string name="pref_title_enable_auto_search">Enable auto search</string>
+    <string name="pref_key_confirmation_time_in_manual_search" translatable="false">ctims</string>
+    <string name="pref_title_confirmation_time_in_manual_search">Confirmation time in manual search</string>
+    <string name="pref_summary_confirmation_time_in_manual_search">Ranges from 100ms to 1000ms</string>
+    <string name="pref_key_confirmation_time_in_auto_search" translatable="false">ctias</string>
+    <string name="pref_title_confirmation_time_in_auto_search">Confirmation time in auto search</string>
+    <string name="pref_summary_confirmation_time_in_auto_search">Ranges from 500ms to 2000ms</string>
+
+    <!-- Strings for barcode detection settings. -->
+    <string name="pref_category_barcode_detection">Barcode detection</string>
+    <string name="pref_key_barcode_reticle_width" translatable="false">barcode_brw</string>
+    <string name="pref_title_barcode_reticle_width">Barcode reticle width</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">Relative to the camera view width, ranges from 50% to 95%</string>
+    <string name="pref_key_barcode_reticle_height" translatable="false">barcode_brh</string>
+    <string name="pref_title_barcode_reticle_height">Barcode reticle height</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">Relative to the camera view height, ranges from 20% to 80%</string>
+    <string name="pref_key_enable_barcode_size_check" translatable="false">barcode_ebsc</string>
+    <string name="pref_title_enable_barcode_size_check">Enable barcode size check</string>
+    <string name="pref_summary_enable_barcode_size_check">Will prompt user to move camera closer if the detected barcode is too small</string>
+    <string name="pref_key_minimum_barcode_width" translatable="false">barcode_mbw</string>
+    <string name="pref_title_minimum_barcode_width">Minimum barcode width</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">Relative to the reticle width, ranges from 20% to 80% (only applicable when barcode size check enabled)</string>
+    <string name="pref_key_delay_loading_barcode_result" translatable="false">barcode_dlbr</string>
+    <string name="pref_title_delay_loading_barcode_result">Delay loading barcode result</string>
+    <string name="pref_summary_delay_loading_barcode_result">Will show the loading spinner for 2s</string>
+
+    <!--  google -->
+    <!--  web   https://youtu.be/Q0KktIdoksw  -->
+    <!--
+    <string name="url">http://35.223.107.34/env_all/</string>
+    -->
+    <string name="url">https://youtu.be/Q0KktIdoksw</string>
+    <string name="mypicurl">http://35.223.107.34/tag/my-pic/</string>
+    <string name="urlip">35.223.107.34</string>
+    <string name="emailid">bibiksh78@gmail.com</string>
+    <string name="emailpw">king073322</string>
+    <string name="title_point">나의 포인트</string>
+    <string name="title_pointcount"> </string>
+    <string name="point_value">100  점 </string>
+    <string name="title_pointplus"> +100 포인트</string>
+    <string name="title_pointminus"> 0</string>
+    <string name="title_posttitle"> 나의 포스팅</string>
+    <string name="title_pointleveltitle"> 나의 레벨</string>
+
+    <string name="title_posting">나만의 재활용 분류 등록 </string>
+    <string name="title_postingdetail">정보가 없습니다. 당신이 이 물건의 맨 처음 등록자가 되어주세요.(1000 point 지급) </string>
+    <string name="title_OK">등록</string>
+    <string name="title_BACK">뒤로</string>
+    <string name="title_CANCEL">취소</string>
+
+
+    <!--  Ghost -->
+    <!-- login -->
+    <string name="prompt_blog_url">Blog address</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_field_required">This field is required</string>
+
+    <string name="no_such_blog">There is no Ghost admin at %s/ghost</string>
+    <string name="login_unexpected_error">Unexpected error during sign in. Please try again.</string>
+    <string name="login_connection_error">Could not connect to %s/ghost. Please try again.</string>
+    <string name="login_ssl_unsupported">Your blog does not support https:// (SSL)</string>
+    <string name="logout">Logout</string>
+    <string name="credentials_expired">Auto-login failed, please log in again</string>
+    <string name="unsynced_changes_msg">You will lose all unsynced changes if you log out now</string>
+    <string name="dont_logout">Don\'t logout</string>
+
+    <!-- posts -->
+    <string name="status_published">Published %s</string>
+    <string name="status_draft">Draft</string>
+    <string name="status_scheduled">Scheduled - %s</string>
+    <string name="status_offline_changes">Saved on device, waiting to go online…</string>
+    <string name="status_published_auto_saved">Changes auto-saved, not published yet</string>
+    <string name="status_marked_for_deletion">Marked for deletion, waiting to go online…</string>
+    <string name="status_marked_for_deletion_open_error">That post is marked for deletion, it cannot be opened</string>
+
+    <string name="preview">Preview</string>
+    <string name="edit">Edit</string>
+    <string name="publish">Publish</string>
+    <string name="update_post">Update Post</string>
+    <string name="unpublish">Unpublish</string>
+    <string name="alert_publish">Publish draft?</string>
+    <string name="alert_unpublish">Unpublish post?</string>
+    <string name="delete_draft">Delete draft</string>
+    <string name="alert_delete_draft_title">Delete this draft?</string>
+    <string name="alert_delete_draft_msg">You will not be able to undo this!</string>
+    <string name="alert_delete_yes">Delete</string>
+    <string name="alert_delete_no">Keep</string>
+    <string name="post_deleted">Post deleted</string>
+    <string name="alert_save_msg">Update post with changes?</string>
+    <string name="alert_save_yes">Yes, update</string>
+    <string name="alert_save_no">Not yet</string>
+    <string name="discard_changes">Discard changes</string>
+    <string name="alert_discard_changes_title">Discard ALL changes since you opened this post?</string>
+    <string name="alert_discard_changes_msg">There\'s no going back!</string>
+    <string name="discard">Discard</string>
+    <string name="view_homepage">View homepage</string>
+    <string name="view_post_on_blog">View post on blog</string>
+    <string name="post_settings">Post Settings</string>
+
+    <string name="save_post_progress">Saving post…</string>
+    <string name="save_post_failed">Couldn\'t save post</string>
+    <string name="save_post_view">View on blog</string>
+    <string name="save_post_timeout">Saved on device</string>
+
+    <string name="save_scenario_unknown">Saved</string>
+    <string name="save_scenario_publish_draft">Post published!</string>
+    <string name="save_scenario_unpublish_published_post">Post unpublished</string>
+    <string name="save_scenario_auto_save_scheduled_or_published_post">Changes saved on device</string>
+    <string name="save_scenario_explicitly_update_scheduled_or_published_post">Post updated</string>
+    <string name="save_scenario_auto_save_draft">Draft saved</string>
+    <string name="save_scenario_explicitly_save_draft">Draft saved</string>
+
+    <string name="post_title_hint">Post title</string>
+    <string name="post_image_hint">Add post image</string>
+    <string name="post_tags_hint">Tags</string>
+    <string name="post_tags_format_hint">Use commas to separate tags</string>
+    <string name="post_body_hint">Begin writing your story…</string>
+    <string name="post_image_load_error">Error loading post image</string>
+    <string name="post_excerpt_hint">Excerpt</string>
+    <string name="post_feature_hint">Feature this post</string>
+    <string name="post_page_hint">Turn this post into a page</string>
+
+    <string name="koenig_post_error">The app can only open posts containing a single Markdown card</string>
+
+    <!-- image insert / upload -->
+    <string name="insert_image">Insert Image</string>
+    <string name="insert_image_url">Insert URL</string>
+    <string name="image_url">Image URL</string>
+    <string name="insert_image_upload">Upload Image</string>
+    <string name="uploading">Uploading…</string>
+    <string name="image_upload_failed">Couldn\'t upload image</string>
+    <string name="remove_image">Remove This Image</string>
+    <string name="enable_permission_tip">Tap \"Permissions\" and enable the \"Storage\" permission</string>
+
+    <!-- conflict resolution -->
+    <string name="conflict_explanation"><![CDATA[<b>The post <i>%s</i> has a conflict.</b> It was updated on the server before your device\'s copy could be uploaded. Which version of the post would you like to keep?]]></string>
+    <string name="conflict_choice_use_device_copy">Upload device copy</string>
+    <string name="conflict_choice_use_server_copy">Download server copy</string>
+    <string name="conflict_last_update_at">Last updated at %s</string>
+    <string name="conflict_post_preview_title">The below copy of the post will be kept:</string>
+    <string name="conflict_post_preview_status"><![CDATA[Post status: <b>%s</b>]]></string>
+
+    <!-- about -->
+    <string name="about_action">About…</string>
+    <string name="about">About</string>
+
+    <string name="version">Version</string>
+
+    <string name="category_support_development">Support development</string>
+    <string name="play_store">Rate on Play Store</string>
+    <string name="play_store_subtitle">Thanks for your support!</string>
+
+    <!-- network -->
+    <string name="no_internet_connection">No Internet connection</string>
+    <string name="network_timeout">Connection timed out</string>
+    <string name="refresh_failed">Couldn\'t refresh data</string>
+
+    <!-- generic -->
+    <string name="done">Done</string>
+    <string name="save">Save</string>
+    <string name="refresh">Refresh</string>
+    <string name="share">Share</string>
+    <string name="loading">Loading…</string>
+    <string name="insert">Insert</string>
+    <string name="intent_no_apps">There are no apps that can handle this action</string>
+    <string name="accept">Accept</string>
+    <string name="draft">Draft</string>
+    <string name="published">Published</string>
+    <string name="scheduled">Scheduled</string>
+    <string name="next">Next</string>
+    <!-- reservation -->
+    <string name="maintitle">대형폐기물 예약</string>
+    <string name="title">대형폐기물 예약 어플리케이션</string>
+    <string name="reserve_date">예약 날짜:</string>
+    <string name="reserve_number_of_item">예약 갯수</string>
+
+    <string name="reservmaintitle">예약 리스트</string>
+    <string name="username">Current username: %s \n\n</string>
+
+</resources>

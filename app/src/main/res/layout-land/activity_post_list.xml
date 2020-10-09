@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ghost.view.PostListActivity">
+
+    <FrameLayout
+        android:id="@+id/app_bar_bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_container_height"
+        android:background="?attr/colorPrimary"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layoutDirection="locale"
+            style="@style/MyToolbar"
+            tools:targetApi="jelly_bean_mr1">
+            <!-- ic_launcher-->
+            <ImageView
+                android:id="@+id/user_image"
+                android:layout_width="@dimen/toolbar_height"
+                android:layout_height="@dimen/toolbar_height"
+                android:contentDescription="@string/cdesc_user_image"
+                android:padding="@dimen/padding_default"
+                tools:src="@drawable/dallin_52"
+                />
+
+            <TextView
+                android:id="@+id/user_blog_title"
+                style="@style/TextAppearance.Medium.Light.Inverse"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/padding_default"
+                android:paddingRight="@dimen/padding_default"
+                android:text="@string/app_name"
+                tools:text="My Awesome Blog Title"
+                />
+            <!--  SearchView androidx.appcompat.widget.SearchView -->
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/simpleSearchView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="right"/>
+        </androidx.appcompat.widget.Toolbar>
+
+        <FrameLayout
+            android:id="@+id/post_list_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:foreground="@drawable/appbar_shadow">
+
+            <!-- CoordinatorLayout needed to ensure the FAB gets correct margins -->
+            <!-- and to ensure the FAB never overlaps a Snackbar -->
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                    android:id="@+id/swipe_refresh_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/post_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clipToPadding="false"
+                        android:paddingBottom="@dimen/card_grid_fab_margin"
+                        android:paddingEnd="@dimen/card_grid_hmargin"
+                        android:paddingLeft="@dimen/card_grid_hmargin"
+                        android:paddingRight="@dimen/card_grid_hmargin"
+                        android:paddingStart="@dimen/card_grid_hmargin"
+                        android:paddingTop="@dimen/card_grid_vmargin"
+                        android:scrollbarStyle="outsideOverlay"
+                        android:scrollbars="vertical"
+                        tools:listitem="@layout/post_list_item"
+                        />
+
+                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/new_post_btn"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    app:srcCompat="@drawable/new_draft"
+                    style="@style/MyFloatingActionButton"
+                    />
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!-- for circular reveal animation -->
+    <FrameLayout
+        android:id="@+id/new_post_reveal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:attr/windowBackground"
+        android:visibility="invisible">
+
+        <!-- for the 2nd part of the animation that shrinks to match the toolbar height of PostViewActivity -->
+        <View
+            android:id="@+id/new_post_reveal_shrink"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="@dimen/toolbar_elevation"
+            android:background="?attr/colorAccent"
+            android:transformPivotX="0dp"
+            android:transformPivotY="0dp"
+            tools:targetApi="lollipop"
+            />
+
+    </FrameLayout>
+
+</FrameLayout>

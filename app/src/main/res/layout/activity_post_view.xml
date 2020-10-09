@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/drawer_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ghost.view.PostViewActivity"
+    tools:ignore="MissingDefaultResource"
+    >
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/post_view_appbar_height"
+            android:background="?attr/colorPrimary">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                style="@style/MyToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    style="@style/TextAppearance.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="@string/app_name"
+                    android:textColor="@color/text_primary_inverted"
+                    tools:text="Toolbar Title"
+                    />
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <!-- TODO hard-coded layout direction = "ltr" instead of "locale"
+                because ViewPager doesn't have RTL support
+                https://code.google.com/p/android/issues/detail?id=56831 -->
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabbar"
+                style="@style/MyTabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tabbar_height"
+                android:layoutDirection="ltr"
+                android:background="@android:color/transparent"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_scrollFlags="scroll|enterAlways"
+                tools:targetApi="jelly_bean_mr1"
+                />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            />
+
+        <include
+            layout="@layout/format_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_gravity="end"
+        app:headerLayout="@layout/post_settings"
+        />
+
+</androidx.drawerlayout.widget.DrawerLayout>
