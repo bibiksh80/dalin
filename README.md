@@ -17,21 +17,38 @@ A collection of real life apps built using [Firebase ML Kit](https://firebase.go
 * [CameraKit Android](https://github.com/CameraKit/camerakit-android)
 * [FAB Progress to show progress](https://github.com/JorgeCastilloPrz/FABProgressCircle)
 * [Picking Image from camera/gallery](https://github.com/jkwiecien/EasyImage)
+
 License:
+
   MIT License
+  
   Apache License 2.0
+  
   <library>
+  
   ghost-0.11.5	
+  
   Ghost-Android
+  
   mlkit-material-android  
+  
   google-http-java-client
+  
   quickstart-android
+  
   FirebaseRealtimeDatabase-Android
+  
   mlkit-material-android
+  
   ghost-0.6.4
+  
   mlkit	1.0
+  
   android	1.2.5.9
+  
   MlKitBarcodeScan
+  
   go-genproto
+  
   
 Built with ❤️ by ksh (bibiksh80@gmail.com)
