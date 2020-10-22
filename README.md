@@ -10,8 +10,8 @@ A collection of real life apps built using [Firebase ML Kit](https://firebase.go
 
 # 스크린 샷 : 
 ![image01](https://github.com/bibiksh80/dalin/blob/main/img/Screenshot_2020-10-04-14-49-07.png)
-![image02](https://github.com/bibiksh80/dalin/blob/main/img/Screenshot_2020-10-04-14-49-39.png)
-
+![image02](https://github.com/bibiksh80/dalin/blob/main/img/Screenshot_2020-10-11-14-09-32.png)
+![image02](https://github.com/bibiksh80/dalin/blob/main/img/Screenshot_2020-10-18-12-50-12.png)
 # Libraries
 
 * [CameraKit Android](https://github.com/CameraKit/camerakit-android)
