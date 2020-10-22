@@ -18,14 +18,6 @@ A collection of real life apps built using [Firebase ML Kit](https://firebase.go
 * [FAB Progress to show progress](https://github.com/JorgeCastilloPrz/FABProgressCircle)
 * [Picking Image from camera/gallery](https://github.com/jkwiecien/EasyImage)
 
-License:
-
-  MIT License
-  
-  Apache License 2.0
-  
-  <library>
-  
   ghost-0.11.5	
   
   Ghost-Android
@@ -50,5 +42,12 @@ License:
   
   go-genproto
   
+
+# License
+
+  # MIT License
+  # Apache License 2.0
+  
+ 
   
 Built with ❤️ by ksh (bibiksh80@gmail.com)
