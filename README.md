@@ -45,8 +45,9 @@ A collection of real life apps built using [Firebase ML Kit](https://firebase.go
 
 # License
 
-  # MIT License
-  # Apache License 2.0
+  MIT License
+  
+  Apache License 2.0
   
  
   
